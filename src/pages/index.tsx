@@ -3,7 +3,7 @@ import { invoke } from "@tauri-apps/api/tauri";
 import Image from "next/image";
 import reactLogo from "../assets/react.svg";
 import tauriLogo from "../assets/tauri.svg";
-import nextLogo from "../assets/next.svg";
+import mantineLogo from "../assets/mantine.svg";
 
 function App() {
   const [greetMsg, setGreetMsg] = useState("");
@@ -16,17 +16,17 @@ function App() {
 
   return (
     <div className="container">
-      <h1>Welcome to Tauri!</h1>
+      <h1>Welcome !!</h1>
 
       <div className="row">
         <span className="logos">
-          <a href="https://nextjs.org" target="_blank">
+          <a href="https://mantine.dev" target="_blank">
             <Image
               width={144}
               height={144}
-              src={nextLogo}
-              className="logo next"
-              alt="Next logo"
+              src={mantineLogo}
+              className="logo mantine"
+              alt="Mantine logo"
             />
           </a>
         </span>
@@ -54,7 +54,7 @@ function App() {
         </span>
       </div>
 
-      <p>Click on the Tauri, Next, and React logos to learn more.</p>
+      <p>Click on the Mantine, Tauri and React logos to learn more.</p>
 
       <div className="row">
         <div>
@@ -70,6 +70,12 @@ function App() {
       </div>
 
       <p>{greetMsg}</p>
+
+      <div className="nextjstext row">
+        <p>
+          The frontend is powered with <a href="https://nextjs.org" target="_blank">Next.js</a>
+        </p>
+      </div>
     </div>
   );
 }

@@ -6,16 +6,13 @@ span.logos > a > span {
   overflow: inherit !important;
 }
 
-.logo.next:hover {
-  filter: drop-shadow(0 0 2em #36373f);
+.logo:hover {
+  filter: drop-shadow(0 0 1em #61dafb);
 }
 
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafb);
-}
-
-@media (prefers-color-scheme: dark) {
-  .logo.next:hover {
-    filter: drop-shadow(0 0 2em #ffff);
-  }
+.nextjstext {
+  position: absolute;
+  bottom: 0;
+  width: calc(100% - 8px);
+  text-align: center;
 }
