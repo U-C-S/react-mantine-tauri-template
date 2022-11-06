@@ -1,15 +1,42 @@
 import type { AppProps } from "next/app";
-
-import "../style.css";
-import "../App.css";
 import { useEffect } from "react";
+import Head from "next/head";
+import { MantineProvider } from "@mantine/core";
 
-// This default export is required in a new `pages/_app.js` file.
-export default function MyApp({ Component, pageProps }: AppProps) {
+export default function App(props: AppProps) {
+  const { Component, pageProps } = props;
+
   useEffect(() => {
     import("@tauri-apps/api/window").then((tauri) => {
       tauri.appWindow.setDecorations(true);
     });
   });
-  return <Component {...pageProps} />;
+
+  return (
+    <>
+      <Head>
+        <title>Page title</title>
+        <meta
+          name="viewport"
+          content="minimum-scale=1, initial-scale=1, width=device-width"
+        />
+      </Head>
+
+      <MantineProvider
+        withGlobalStyles
+        withNormalizeCSS
+        theme={{
+          globalStyles: (theme) => ({
+            body: {
+              backgroundColor: "transparent",
+            },
+          }),
+          black: "#00000000",
+          colorScheme: "dark",
+        }}
+      >
+        <Component {...pageProps} />
+      </MantineProvider>
+    </>
+  );
 }
